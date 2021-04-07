@@ -1,0 +1,38 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "prettier.prettierPath": "./node_modules/prettier",
+  "files.insertFinalNewline": true,
+  "todo-tree.general.tags": ["TODO","FIXME","BUG","REFACTOR"],
+  "todo-tree.highlights.defaultHighlight": {
+    "foreground": "white",
+    "opacity": 60
+  },
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "alert",
+      "foreground": "red",
+      "background": "yellow",
+      "iconColour": "yellow",
+      "gutterIcon": true
+    },
+    "FIXME": {
+      "background": "magenta",
+      "iconColour": "magenta",
+      "gutterIcon": true
+    },
+    "BUG": {
+      "background": "red",
+      "iconColour": "red",
+      "gutterIcon": true
+    },
+    "REFACTOR": {
+      "icon": "check",
+      "background": "green",
+      "iconColour": "green",
+      "gutterIcon": true
+    }
+  }
+}

@@ -1,0 +1,5 @@
+/.vscode
+/coverage
+/src/interfaces/databases/migrations
+/node_modules
+*.md

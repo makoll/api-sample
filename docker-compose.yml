@@ -1,0 +1,48 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: ./
+    container_name: sample_api
+    command: sh -c "npm i; npm run ${ENVIRONMENT:-local}"
+    tty: true
+    working_dir: '/src'
+    volumes:
+      - .:/src/:cached
+    ports:
+      - '3000:3000'
+      - '9129:9129'
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    container_name: sample_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: sample
+      MYSQL_USER: sample
+      MYSQL_PASSWORD: Sample1#
+      MYSQL_ROOT_PASSWORD: Sample1#
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./mysql/initdb.d:/docker-entrypoint-initdb.d
+      - ./mysql/conf.d:/etc/mysql/conf.d
+      - ./log/mysql:/var/log/mysql
+  test_db:
+    image: mysql:5.7
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    container_name: sample_db_test
+    restart: always
+    environment:
+      MYSQL_DATABASE: sample
+      MYSQL_USER: sample
+      MYSQL_PASSWORD: Sample1#
+      MYSQL_ROOT_PASSWORD: Sample1#
+    ports:
+      - '13306:3306'
+    volumes:
+      - ./mysql_test/initdb.d:/docker-entrypoint-initdb.d
+      - ./mysql/conf.d:/etc/mysql/conf.d
+      - ./log/mysql_test:/var/log/mysql

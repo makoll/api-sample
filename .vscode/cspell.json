@@ -1,0 +1,21 @@
+{
+    "version": "0.1",
+    "words": [
+        "appenders",
+        "camelcase",
+        "concat",
+        "destructure",
+        "healthcheck",
+        "Imples",
+        "Inno",
+        "middlewares",
+        "mysqld",
+        "nvarchar",
+        "ormconfig",
+        "tinyint",
+        "typeorm",
+        "Usecase",
+        "usecases",
+        "varchar"
+    ]
+}

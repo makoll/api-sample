@@ -1,0 +1,15 @@
+{
+  "appenders": {
+    "stdout": {
+      "type": "stdout",
+      "layout": {
+        "type": "pattern",
+        "pattern": "[%d{yyyy-MM-dd hh:mm:ss:SSS}] {sample-%p}:%m"
+      }
+    }
+  },
+  "categories": {
+    "default": { "appenders": ["stdout"], "level": "warn" },
+    "debug": { "appenders": ["stdout"], "level": "debug" }
+  }
+}
